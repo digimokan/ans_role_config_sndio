@@ -1,0 +1,3 @@
+# install (or remove) sndio package(s) from the system
+install_sndio: true
+

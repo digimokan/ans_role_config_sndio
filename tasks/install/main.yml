@@ -1,0 +1,21 @@
+# References:
+#   https://wiki.freebsd.org/Sound#sndio_.28using_daemon.29
+#   https://vermaden.wordpress.com/2021/05/26/freebsd-desktop-part-26-configuration-conferencing-and-meetings/
+#   https://www.davidschlachter.com/misc/freebsd-videoconferencing
+
+- name: "Install the 'sndio' package: {{ install_sndio }}"
+  ansible.builtin.package:
+    name: sndio
+    state: "{{ 'present' if install_sndio else 'absent' }}"
+  become: true
+  become_user: root
+
+- name: "Ensure 'sndiod' service is started, and enable it to start at boot"
+  ansible.builtin.service:
+    name: sndiod
+    state: started
+    enabled: yes
+  become: true
+  become_user: root
+  when: install_sndio
+
