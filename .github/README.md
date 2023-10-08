@@ -53,7 +53,7 @@ Install and configure the sndio sound driver layer.
        - name: "Install and configure the sndio sound driver layer"
          ansible.builtin.include_role:
            name: ans_role_config_sndio
-           public: yes
+           public: true
    ```
 
 ## Role Options

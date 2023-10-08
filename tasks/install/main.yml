@@ -14,7 +14,7 @@
   ansible.builtin.service:
     name: sndiod
     state: started
-    enabled: yes
+    enabled: true
   become: true
   become_user: root
   when: install_sndio
