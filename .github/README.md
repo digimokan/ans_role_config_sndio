@@ -58,9 +58,9 @@ Install and configure the sndio sound driver layer.
 
 ## Role Options
 
-See the role `defaults` file, for overridable vars:
+Vars with default values, which can be overridden in the playbook:
 
-  * [defaults/main/](../defaults/main/)
+  * [overridable](../defaults/main/overridable/main.yml)
 
 ## Contributing
 

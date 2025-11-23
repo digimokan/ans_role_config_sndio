@@ -3,10 +3,10 @@
 #   https://vermaden.wordpress.com/2021/05/26/freebsd-desktop-part-26-configuration-conferencing-and-meetings/
 #   https://www.davidschlachter.com/misc/freebsd-videoconferencing
 
-- name: "Install the 'sndio' package: {{ install_sndio }}"
+- name: "Install the 'sndio' package: {{ sndio_install_sndio }}"
   ansible.builtin.package:
     name: sndio
-    state: "{{ 'present' if install_sndio else 'absent' }}"
+    state: "{{ 'present' if sndio_install_sndio else 'absent' }}"
   become: true
   become_user: root
 
@@ -17,5 +17,5 @@
     enabled: true
   become: true
   become_user: root
-  when: install_sndio
+  when: sndio_install_sndio
 
